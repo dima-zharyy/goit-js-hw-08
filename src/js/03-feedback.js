@@ -2,7 +2,8 @@ import throttle from 'lodash.throttle';
 
 const form = document.querySelector('.feedback-form');
 const STORAGE_KEY = 'feedback-msg';
-const inputData = {};
+const parsedFormData = JSON.parse(localStorage.getItem(STORAGE_KEY));
+const inputData = localStorage.getItem(STORAGE_KEY) ? parsedFormData : {};
 
 populateUserInput();
 
